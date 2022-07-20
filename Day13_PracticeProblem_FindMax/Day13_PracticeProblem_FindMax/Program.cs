@@ -7,8 +7,8 @@ namespace Day13_FindMax
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Maximum value finder");
-            // MaxNumberCheck maxNumberCheck = new MaxNumberCheck();
-            int result = MaxNumberCheck.MaxIntegerNumber(9, 6, 2);
+            MaxNumberCheck maxNumberCheck = new MaxNumberCheck();
+            int result = maxNumberCheck.MaxIntegerNumber(9, 6, 2);
             Console.WriteLine(result);
 
 
