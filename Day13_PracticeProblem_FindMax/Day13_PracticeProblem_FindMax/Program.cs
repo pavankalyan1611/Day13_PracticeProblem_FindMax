@@ -6,20 +6,15 @@ namespace Day13_FindMax
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Maximum value finder Using Generic Class :");
+            Console.WriteLine("Welcome to Maximum value finder Using Generic Method :");
 
-            int[] intArray = { 112, 432, 344, 555, 67 };
-            GenericMaximum<int> genericInt = new GenericMaximum<int>(intArray);
-            genericInt.PrintMaxValue();
+            int[] intArray = { 3, 5, 1, 2, 4};
+            double[] doubleArray = { 1.167, 98347.4,444.96, 4.4 };
+            string[] stringArray = {"pAvan","Mani","pAVan","maNi"};
 
-            double[] doubleArray = { 11.2, 34.4, 4.32, 55.5, 6.78 };
-            GenericMaximum<double> genericDouble = new GenericMaximum<double>(doubleArray);
-            genericDouble.PrintMaxValue();
-            string[] stringArray = { "111", "222", "333", "55", "9" };
-
-            GenericMaximum<string> genericString = new GenericMaximum<string>(stringArray);
-            genericString.PrintMaxValue();
-
+            MaxNumberCheck.FindMax<int>(intArray);
+            MaxNumberCheck.FindMax<double>(doubleArray);
+            MaxNumberCheck.FindMax<string>(stringArray);
         }
     }
 }
