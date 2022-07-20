@@ -8,7 +8,7 @@ namespace Day13_FindMax
 {   
     public class MaxNumberCheck
     {
-        public static void FindMax<T>(T[] inputArray)
+        public static void FindMax<T>(params T[] inputArray)
         {
             Array.Sort(inputArray);
             Console.WriteLine(inputArray[inputArray.Length - 1]);
