@@ -5,33 +5,38 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Day13_FindMax
-{
-    public class MaxNumberCheck
-    {
-
-        public string MaximumStringNumber(string firstString, string secondString, string thirdString)
+{   
+        public class GenericMaximum<T> where T : IComparable
         {
-            if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0 ||
-                firstString.CompareTo(secondString) >= 0 && firstString.CompareTo(thirdString) > 0 ||
-                firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) >= 0)
+            public T[] value;
+            public GenericMaximum(T[] value)
             {
-                return firstString;
+                this.value = value;
             }
 
-            if (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0 ||
-                secondString.CompareTo(firstString) >= 0 && secondString.CompareTo(thirdString) > 0 ||
-                secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) >= 0)
+            public T[] Sort(T[] values)
             {
-                return secondString;
+                Array.Sort(values);
+                return values;
+
+            }
+            public T MaxValue(params T[] values)
+            {
+                var sorted_values = Sort(values);
+
+                return sorted_values[sorted_values.Length - 1];
             }
 
-            if (thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) > 0 ||
-                thirdString.CompareTo(firstString) >= 0 && thirdString.CompareTo(secondString) > 0 ||
-                thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) >= 0)
+            public T MaxMethod()
             {
-                return thirdString;
+                var max = MaxValue(this.value);
+                return max;
             }
-            throw new Exception("firstString,secondString and thirdString are same");
-        }
-    }
+
+            public void PrintMaxValue()
+            {
+                var max = MaxValue(this.value);
+                Console.WriteLine("Maximum value is " + max);
+            }
+        }    
 }

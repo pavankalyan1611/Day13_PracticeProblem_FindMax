@@ -6,10 +6,19 @@ namespace Day13_FindMax
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Maximum value finder");
-            MaxNumberCheck maxNumberCheck = new MaxNumberCheck();
-            string string1 = maxNumberCheck.MaximumStringNumber("205", "101", "269");
-            Console.WriteLine("Maximum Of string values: {0}", string1);
+            Console.WriteLine("Welcome to Maximum value finder Using Generic Class :");
+
+            int[] intArray = { 112, 432, 344, 555, 67 };
+            GenericMaximum<int> genericInt = new GenericMaximum<int>(intArray);
+            genericInt.PrintMaxValue();
+
+            double[] doubleArray = { 11.2, 34.4, 4.32, 55.5, 6.78 };
+            GenericMaximum<double> genericDouble = new GenericMaximum<double>(doubleArray);
+            genericDouble.PrintMaxValue();
+            string[] stringArray = { "111", "222", "333", "55", "9" };
+
+            GenericMaximum<string> genericString = new GenericMaximum<string>(stringArray);
+            genericString.PrintMaxValue();
 
         }
     }
