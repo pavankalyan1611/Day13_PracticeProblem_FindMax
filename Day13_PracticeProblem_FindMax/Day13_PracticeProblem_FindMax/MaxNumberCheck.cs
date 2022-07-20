@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Day13_FindMax
 {
-    internal class MaxNumberCheck
+    public class MaxNumberCheck
     {
-        public static int MaxIntegerNumber(int firstValue, int secondValue, int thirdValue)
-        {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
-            {
-                return firstValue;
-            }
+        public int MaxIntegerNumber(int firstValue, int secondValue, int thirdValue)
+        {          
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
             {
                 return firstValue;
