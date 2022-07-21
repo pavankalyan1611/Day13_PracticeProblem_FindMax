@@ -6,12 +6,27 @@ using System.Threading.Tasks;
 
 namespace Day13_FindMax
 {   
-    public class MaxNumberCheck
+    public class MaxNumberCheck<T>
     {
-        public static void FindMax<T>(params T[] inputArray)
+        public T[] array;
+        public MaxNumberCheck(T[] array)
+        {
+            this.array = array;
+        }
+        public T[] Sort(T[] inputArray)
         {
             Array.Sort(inputArray);
-            Console.WriteLine(inputArray[inputArray.Length - 1]);
+            return inputArray;
+        }
+        public T PrintMax()
+        {
+            var sorted_values  = Sort(this.array);
+            return sorted_values[sorted_values.Length-1];
+        }
+        public void testMaximum()
+        {
+            var max = PrintMax();
+            Console.WriteLine(max);
         }
     }    
 }

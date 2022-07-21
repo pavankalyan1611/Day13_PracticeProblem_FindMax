@@ -6,11 +6,18 @@ namespace Day13_FindMax
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Maximum value finder Using Generic Method :");          
+            Console.WriteLine("Welcome to Maximum value finder Using Generic Method :");
 
-            MaxNumberCheck.FindMax<int>(1,5,3,6,7,674646,7844,898938);
-            MaxNumberCheck.FindMax<double>(3453.6464,546.543,45.67,35.436,65.578,46.546,8);
-            MaxNumberCheck.FindMax<string>("pav","PAVAN","Kalyan","KAlyan", "BridgeLabzs");
+            int[] integer = { 5, 2, 8, 6, 3 };
+            double[] doubles = { 54.5664, 4646.4646, 64.464, 87.964, 78.579 };
+            string[] strings = {"467","44645","97","969"};
+            MaxNumberCheck<int> max = new MaxNumberCheck<int>(integer);
+            MaxNumberCheck<double> doub= new MaxNumberCheck<double>(doubles);
+            MaxNumberCheck<string> str = new MaxNumberCheck<string>(strings);
+
+            max.testMaximum();
+            doub.testMaximum();
+            str.testMaximum();
         }
     }
 }
